@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE "Character" ALTER COLUMN "defense" SET DEFAULT 0,
+ALTER COLUMN "strength" SET DEFAULT 0,
+ALTER COLUMN "mana" SET DEFAULT 0;
