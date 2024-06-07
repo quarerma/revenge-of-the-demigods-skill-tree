@@ -112,9 +112,13 @@ export class CharacterService {
         node.effect_on_char,
       );
 
-      nodesEffescts.forEach((stat) => {
-        this.updateStats.updateStats(stat.type, stat.value * -1, character.id);
-      });
+      for (const stat of nodesEffescts) {
+        await this.updateStats.updateStats(
+          stat.type,
+          stat.value * -1,
+          character.id,
+        );
+      }
 
       return this.dataBaseService.character.update({
         where: { id: characterId },

@@ -94,9 +94,9 @@ export class UpdateStatsService {
       const stats: UpgradeStat[] = this.deStringifyStats(node.effect_on_char);
 
       // If the character has the node, remove it
-      stats.forEach(async (stat) => {
+      for (const stat of stats) {
         await this.updateStats(stat.type, stat.value, characterId);
-      });
+      }
     } catch (error) {
       return error;
     }
