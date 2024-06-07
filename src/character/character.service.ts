@@ -69,7 +69,7 @@ export class CharacterService {
       }
 
       // Update the stats
-      this.updateStats.updateStatsOnNodeAdd(node, character.id);
+      await this.updateStats.updateStatsOnNodeAdd(node, character.id);
 
       const updatedSkillTree = character.skill_tree;
       updatedSkillTree.push(nodeId);
